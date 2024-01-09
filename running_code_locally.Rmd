@@ -1,7 +1,6 @@
 ---
 title: "Instructions"
 output: html_document
-date: "2024-01-09"
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 If you want to run the code in the file `music_artists_project.Rmd` on your local machine, you can follow two approaches:
 
-### 1. Without scraping the data
+### 1. Without data extraction
+
 You can run the code without extracting data from the APIs or scraping the Rolling Stone's article again. Simply pull the entire GitHub repository including the `data` folder. If you have saved the entire repo on your local machine, you can execute the code chunks that are not labeled with `eval=False`. This will prevent scraping or extracting the data again.
 
 ### 2. With data extraction

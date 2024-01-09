@@ -32,7 +32,7 @@ library(knitr)
 
 ## GitHub
 
-The GitHub repository for **this assignment** can be found [here](https://github.com/emmi3105/472_final_public).^[Note that, in our RMarkdown, we disabled the execution of the chunks containing code for automatic webscraping and sending requests to our APIs with eval=False as to prevent retrieving the data over and over again.] Please refer to the document called `running_code_locally.Rmd` available in the repository and follow the instructions to run the code on your local machine.
+The GitHub repository for **this assignment** can be found [here](https://github.com/emmi3105/472_final_public).^[Note that, in our RMarkdown, we disabled the execution of the chunks containing code for automatic webscraping or extraccting data from an API with eval=False as to prevent retrieving the data over and over again.] Please refer to the document called `running_code_locally.Rmd` available in the repository and follow the instructions to run the code on your local machine.
 
 
 ## Research question:
@@ -1211,7 +1211,7 @@ combined_endurance_distribution
 
 #### Intersections
 
-The RS-T100, which exhibit outlier values for endurance scores, may not be confined solely to the Rolling Stones ranking, but could also be found in the Spotify-T50 and LastFM-T50. Therefore, we look at the intersections of the RS-T100, Spotify-T50 and LastFM-T50.
+The RS-T100, which exhibit outlier values for endurance scores, may not be confined solely to the Rolling Stone's ranking, but could also be found in the Spotify-T50 and LastFM-T50. Therefore, we look at the intersections of the RS-T100, Spotify-T50 and LastFM-T50.
 
 
 ```{r venn diagram spotify, fm, rs top 100, eval=FALSE}
@@ -1233,7 +1233,7 @@ venn <- venn.diagram(
   col=c('#F8766D', '#00BFC4', '#EBAC23'),
   fill = c(alpha('#F8766D',0.3), alpha('#00BFC4',0.3), alpha('#EBAC23',0.3)),
   fontfamily = "arial",
-  # Output festures
+  # Output features
   imagetype="png",
   height = 2000 , 
   width = 2000 , 
@@ -1249,7 +1249,7 @@ venn <- venn.diagram(
 ```
 
 
-```{r display the venn diagram for spotify, lastFM, RS, echo=FALSE,out.width="45%", out.height="45%",fig.cap="Intersection of Rolling Stones Top 100, Spotify Top 50, LastFM Top 50",fig.show='hold',fig.align='center'}
+```{r display the venn diagram for spotify, lastFM, RS, echo=FALSE,out.width="45%", out.height="45%",fig.cap="Intersection of Rolling Stone's Top 100, Spotify Top 50, LastFM Top 50",fig.show='hold',fig.align='center'}
 
 # Display the venn diagrams
 img <- knitr::include_graphics("venn_spotify_fm_rs.png")
@@ -1328,7 +1328,7 @@ endurance_plot_rs
 
 **Results**: As visualised below, we find that recent album releases positively correlate with higher endurance scores for all artists.
 
-```{r latest album release vs. endurance, fig.width=10, fig.height=4, message=FALSE}
+```{r latest album release vs. endurance, fig.width=10, fig.height=4, message=FALSE, warning=FALSE}
 
 #####################################
 # Plot the latest album release dates against endurance
@@ -1611,13 +1611,13 @@ set_riaa <- riaa_albums_result %>% select(Spotify_Artist_ID) %>% unlist()
 # Make the plots (eval = FALSE in RMarkdown)
 venn_riaa_albums <- venn.diagram(
   x = list(set_rs, set_riaa),
-  category.names = c("Rolling Stone's Top 100" , "RIAA albums"),
+  category.names = c("Rolling Stone's Top 100" , "RIAA Top 100"),
   filename = 'venn_diagramm_riaa_albums.png',
   output=TRUE,
   col=c('#F8766D', '#F564E3'),
   fill = c(alpha('#F8766D',0.3), alpha('#F564E3',0.3)),
   fontfamily = "arial",
-  # Output festures
+  # Output features
   imagetype="png",
   height = 2000 , 
   width = 2000 , 
@@ -1627,17 +1627,13 @@ venn_riaa_albums <- venn.diagram(
   cat.cex = 1, 
   cat.col = c('#F8766D', '#F564E3'),
   cat.fontface = "bold",
-  cat.fontfamily = "arial",
-  # Add a title
-  main = "RS-T100 and RIAA most certified albums",
-  main.cex = 1.2,
-  main.fontfamily = "arial" 
+  cat.fontfamily = "arial"
 )
 
 ```
 
 
-```{r display the venn diagram for riaa and RS, echo=FALSE,out.width="45%", out.height="45%",fig.cap="Intersection of Rolling Stones Top 100, Spotify Top 50, LastFM Top 50",fig.show='hold',fig.align='center'}
+```{r display the venn diagram for riaa and RS, echo=FALSE,out.width="45%", out.height="45%",fig.cap="Intersection of Rolling Stone's Top 100 and RIAA Top 100",fig.show='hold',fig.align='center'}
 
 # Display the venn diagrams
 img2 <- knitr::include_graphics("venn_diagramm_riaa_albums.png")
